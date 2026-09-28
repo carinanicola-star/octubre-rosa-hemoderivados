@@ -32,110 +32,159 @@
         }
     </script>
 </head>
-<body class="bg-brand-50 text-slate-800 font-sans antialiased selection:bg-brand-200 px-2 sm:px-4">
+<body class="bg-brand-50 text-slate-800 font-sans antialiased selection:bg-brand-200">
 
-    <!-- SECCIÓN 1: Portada Principal -->
-    <section id="portada" class="px-2 sm:px-6 py-8 sm:py-14">
-        <div class="max-w-4xl mx-auto text-center space-y-4 sm:space-y-6">
-            <!-- LOGO INSTITUCIONAL -->
+    <!-- BARRA DE NAVEGACIÓN SUPERIOR FIJA -->
+    <nav class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-brand-100 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            
+            <!-- Logo e Identidad -->
+            <div class="flex items-center gap-3">
+                <a href="#portada" class="flex items-center gap-2">
+                    <img src="https://lh3.googleusercontent.com/d/1GhguUo2AhxF6aZCmQIUbEb0pJ2fySrjT" alt="Laboratorio Hemoderivados UNC" class="h-8 md:h-10 w-auto object-contain" />
+                </a>
+                <a href="#portada" class="font-serif text-base md:text-xl font-bold text-brand-700 flex items-center gap-1.5 border-l border-slate-200 pl-3">
+                    <svg class="h-5 md:h-6 w-auto inline-block" viewBox="0 0 100 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M65 55 L85 115 L68 105 L50 68 Z" fill="#B00045" />
+                        <path d="M50 68 C30 45 18 30 32 15 C44 2 56 2 68 15 C82 30 70 45 50 68 Z" fill="#EE2B74" />
+                        <path d="M50 52 C38 36 30 25 38 16 C44 9 56 9 62 16 C70 25 62 36 50 52 Z" fill="#FFFFFF" />
+                        <path d="M68 15 C82 30 70 45 50 68 L15 115 L32 105 L55 58 Z" fill="#EE2B74" />
+                    </svg>
+                    <span>Octubre Rosa</span>
+                </a>
+            </div>
+
+            <!-- Menú en Computadoras -->
+            <div class="hidden lg:flex gap-4 text-xs xl:text-sm font-medium text-slate-600">
+                <a href="#mama-uterino" class="hover:text-brand-600 transition">¿Qué es el Cáncer?</a>
+                <a href="#prevencion" class="hover:text-brand-600 transition">Prevención</a>
+                <a href="#autoexamen" class="hover:text-brand-600 transition">Autoexploración</a>
+                <a href="#controles" class="hover:text-brand-600 transition">Chequeos</a>
+                <a href="#cardio" class="hover:text-brand-600 transition">Corazón</a>
+                <a href="#menopausia" class="hover:text-brand-600 transition">Menopausia</a>
+                <a href="#bienestar" class="hover:text-brand-600 transition">Salud Mental</a>
+                <a href="#circuito" class="hover:text-brand-600 transition font-bold text-brand-600">Circuito de la Mujer</a>
+            </div>
+
+            <!-- Botón Hamburguesa en Celulares -->
+            <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-slate-700 hover:text-brand-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-brand-100 px-6 py-4 space-y-3 shadow-xl text-sm font-medium">
+            <a href="#mama-uterino" onclick="closeMobileMenu()" class="block text-slate-700 hover:text-brand-600 border-b border-slate-50 pb-2">💡 ¿Qué es el Cáncer de Mama y Cuello Uterino?</a>
+            <a href="#prevencion" onclick="closeMobileMenu()" class="block text-slate-700 hover:text-brand-600 border-b border-slate-50 pb-2">🎗️ Estrategias de Prevención</a>
+            <a href="#autoexamen" onclick="closeMobileMenu()" class="block text-slate-700 hover:text-brand-600 border-b border-slate-50 pb-2">🩺 Autoexploración Consciente</a>
+            <a href="#controles" onclick="closeMobileMenu()" class="block text-slate-700 hover:text-brand-600 border-b border-slate-50 pb-2">🗓️ Esquema de Chequeo Anual</a>
+            <a href="#cardio" onclick="closeMobileMenu()" class="block text-slate-700 hover:text-brand-600 border-b border-slate-50 pb-2">❤️ Salud Cardiovascular Femenina</a>
+            <a href="#menopausia" onclick="closeMobileMenu()" class="block text-slate-700 hover:text-brand-600 border-b border-slate-50 pb-2">✨ Perimenopausia y Menopausia</a>
+            <a href="#bienestar" onclick="closeMobileMenu()" class="block text-slate-700 hover:text-brand-600 border-b border-slate-50 pb-2">🧠 Bienestar y Salud Mental</a>
+            <a href="#circuito" onclick="closeMobileMenu()" class="block text-brand-700 font-bold bg-brand-50 p-2.5 rounded-lg">🏥 Circuito de la Mujer</a>
+        </div>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="pt-20 px-4 max-w-5xl mx-auto space-y-20 pb-16">
+
+        <!-- PÁGINA 1: Portada -->
+        <section id="portada" class="scroll-mt-28 text-center space-y-6 pt-6">
             <div class="flex justify-center items-center">
-                <img src="https://lh3.googleusercontent.com/d/1GhguUo2AhxF6aZCmQIUbEb0pJ2fySrjT" alt="Laboratorio Hemoderivados UNC" class="h-12 sm:h-16 md:h-20 w-auto object-contain" />
+                <img src="https://lh3.googleusercontent.com/d/1GhguUo2AhxF6aZCmQIUbEb0pJ2fySrjT" alt="Laboratorio Hemoderivados UNC" class="h-16 sm:h-20 w-auto object-contain" />
             </div>
             
-            <!-- Etiqueta con Lazo Rosa -->
             <div>
-                <span class="inline-flex items-center gap-1.5 bg-brand-100 text-brand-700 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full text-[11px] sm:text-xs md:text-sm font-semibold tracking-wide uppercase text-center max-w-full">
-                    <svg class="h-3.5 sm:h-4 w-auto shrink-0 inline-block" viewBox="0 0 100 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <span class="inline-flex items-center gap-2 bg-brand-100 text-brand-700 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide uppercase">
+                    <svg class="h-4 w-auto inline-block" viewBox="0 0 100 130" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M65 55 L85 115 L68 105 L50 68 Z" fill="#B00045" />
                         <path d="M50 68 C30 45 18 30 32 15 C44 2 56 2 68 15 C82 30 70 45 50 68 Z" fill="#EE2B74" />
                         <path d="M50 52 C38 36 30 25 38 16 C44 9 56 9 62 16 C70 25 62 36 50 52 Z" fill="#FDF2F4" />
                         <path d="M68 15 C82 30 70 45 50 68 L15 115 L32 105 L55 58 Z" fill="#EE2B74" />
                     </svg>
-                    <span>Guía de Cuidado Integral de la Salud Femenina</span>
+                    Guía de Cuidado Integral de la Salud Femenina
                 </span>
             </div>
 
-            <h1 class="font-serif text-2xl sm:text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
+            <h1 class="font-serif text-3xl sm:text-5xl font-bold text-slate-900 leading-tight">
                 Cuidarte es un Acto de Amor Propio
             </h1>
-            <p class="text-sm sm:text-base md:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+            <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
                 Entender tu cuerpo sin miedos ni tabúes. Una guía clara y cercana sobre prevención oncoginecológica, chequeos anuales, corazón, menopausia y bienestar emocional.
             </p>
 
             <div class="pt-2 flex flex-col sm:flex-row justify-center items-center gap-3">
-                <a href="#mama-uterino" class="w-full sm:w-auto text-center bg-brand-500 hover:bg-brand-600 text-white font-semibold px-6 py-3 rounded-full shadow-md transition text-sm">
+                <a href="#mama-uterino" class="w-full sm:w-auto text-center bg-brand-500 hover:bg-brand-600 text-white font-semibold px-7 py-3.5 rounded-full shadow-md transition text-sm">
                     Aprender y Cuidarme ➔
                 </a>
-                <a href="#circuito" class="w-full sm:w-auto text-center bg-white text-brand-700 border border-brand-200 hover:bg-brand-50 font-semibold px-6 py-3 rounded-full shadow-sm transition text-sm">
+                <a href="#circuito" class="w-full sm:w-auto text-center bg-white text-brand-700 border border-brand-200 hover:bg-brand-50 font-semibold px-7 py-3.5 rounded-full shadow-sm transition text-sm">
                     Ver Circuito de la Mujer 🏥
                 </a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- SECCIÓN 2: Entendiendo las Enfermedades -->
-    <section id="mama-uterino" class="px-2 sm:px-6 py-8 sm:py-12">
-        <div class="max-w-5xl mx-auto space-y-6 sm:space-y-8">
+        <!-- PÁGINA 2: Entendiendo las Enfermedades -->
+        <section id="mama-uterino" class="scroll-mt-24 space-y-8">
             <div class="text-center space-y-1">
-                <span class="text-brand-600 text-xl sm:text-2xl">💡</span>
-                <h2 class="font-serif text-xl sm:text-3xl md:text-4xl font-bold text-slate-900">Entendiendo nuestro cuerpo</h2>
-                <p class="text-slate-600 text-xs sm:text-sm md:text-base">Saber qué ocurre en nuestro organismo nos da el poder de prevenir y actuar a tiempo.</p>
+                <span class="text-brand-600 text-2xl">💡</span>
+                <h2 class="font-serif text-2xl sm:text-4xl font-bold text-slate-900">Entendiendo nuestro cuerpo</h2>
+                <p class="text-slate-600 text-sm sm:text-base">Saber qué ocurre en nuestro organismo nos da el poder de prevenir y actuar a tiempo.</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Cáncer de Mama -->
-                <div class="bg-white p-5 sm:p-7 rounded-2xl shadow-sm border border-brand-100 space-y-3">
-                    <div class="inline-block px-3 py-1 bg-brand-100 text-brand-700 text-[11px] font-bold rounded-full">Salud Mamaria</div>
-                    <h3 class="font-serif text-lg sm:text-2xl font-bold text-slate-900">¿Qué es el Cáncer de Mama?</h3>
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-brand-100 space-y-4">
+                    <span class="inline-block px-3 py-1 bg-brand-100 text-brand-700 text-xs font-bold rounded-full">Salud Mamaria</span>
+                    <h3 class="font-serif text-xl sm:text-2xl font-bold text-slate-900">¿Qué es el Cáncer de Mama?</h3>
                     <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
                         La mama está formada por glándulas productoras de leche, conductos y tejido graso. El cáncer ocurre cuando algunas células comienzan a multiplicarse de forma desordenada y alterada, formando un nódulo o tumor.
                     </p>
-                    <div class="bg-brand-50 p-3.5 rounded-xl text-xs text-slate-700 space-y-1.5">
+                    <div class="bg-brand-50 p-4 rounded-xl text-xs text-slate-700 space-y-2">
                         <p class="font-semibold text-brand-900">✨ Lo que tenés que saber:</p>
                         <p>En sus etapas iniciales <strong>no suele doler ni sentirse a simple vista</strong>. Por eso, realizarse la mamografía antes de sentir bultos permite detectarlo cuando es altamente curable.</p>
                     </div>
                 </div>
 
                 <!-- Cáncer de Cuello Uterino -->
-                <div class="bg-white p-5 sm:p-7 rounded-2xl shadow-sm border border-brand-100 space-y-3">
-                    <div class="inline-block px-3 py-1 bg-brand-100 text-brand-700 text-[11px] font-bold rounded-full">Salud Cervical</div>
-                    <h3 class="font-serif text-lg sm:text-2xl font-bold text-slate-900">¿Qué es el Cáncer de Cuello Uterino?</h3>
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-brand-100 space-y-4">
+                    <span class="inline-block px-3 py-1 bg-brand-100 text-brand-700 text-xs font-bold rounded-full">Salud Cervical</span>
+                    <h3 class="font-serif text-xl sm:text-2xl font-bold text-slate-900">¿Qué es el Cáncer de Cuello Uterino?</h3>
                     <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
                         El cuello del útero (cérvix) es la parte inferior que conecta el útero con la vagina. En más del 99% de los casos, este cáncer se origina por la infección prolongada por ciertos tipos del Virus del Papiloma Humano (VPH).
                     </p>
-                    <div class="bg-brand-50 p-3.5 rounded-xl text-xs text-slate-700 space-y-1.5">
+                    <div class="bg-brand-50 p-4 rounded-xl text-xs text-slate-700 space-y-2">
                         <p class="font-semibold text-brand-900">✨ La gran oportunidad:</p>
                         <p>Desde que el virus produce una pequeña lesión hasta que se desarrolla un cáncer transcurren <strong>entre 10 y 20 años</strong>. ¡El sistema médico tiene hasta dos décadas para detectar la lesión con un PAP o Test de VPH y solucionarla fácilmente!</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- SECCIÓN 3: Pautas de Detección Oportuna -->
-    <section id="prevencion" class="px-3 sm:px-6 py-8 sm:py-12 bg-white rounded-2xl sm:rounded-3xl">
-        <div class="max-w-5xl mx-auto space-y-6 sm:space-y-8">
+        <!-- PÁGINA 3: Pautas de Detección Oportuna -->
+        <section id="prevencion" class="scroll-mt-24 bg-white p-6 sm:p-10 rounded-3xl border border-brand-100 shadow-sm space-y-8">
             <div class="text-center space-y-1">
                 <div class="flex justify-center mb-1">
-                    <svg class="h-7 sm:h-8 w-auto" viewBox="0 0 100 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="h-8 w-auto" viewBox="0 0 100 130" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M65 55 L85 115 L68 105 L50 68 Z" fill="#B00045" />
                         <path d="M50 68 C30 45 18 30 32 15 C44 2 56 2 68 15 C82 30 70 45 50 68 Z" fill="#EE2B74" />
                         <path d="M50 52 C38 36 30 25 38 16 C44 9 56 9 62 16 C70 25 62 36 50 52 Z" fill="#FFFFFF" />
                         <path d="M68 15 C82 30 70 45 50 68 L15 115 L32 105 L55 58 Z" fill="#EE2B74" />
                     </svg>
                 </div>
-                <h2 class="font-serif text-xl sm:text-3xl md:text-4xl font-bold text-slate-900">Estrategias de Prevención Oportuna</h2>
-                <p class="text-slate-600 text-xs sm:text-sm md:text-base">Pautas claras para el cuidado de tu salud.</p>
+                <h2 class="font-serif text-2xl sm:text-4xl font-bold text-slate-900">Estrategias de Prevención Oportuna</h2>
+                <p class="text-slate-600 text-sm sm:text-base">Pautas claras para el cuidado de tu salud.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Mamografía -->
-                <div class="space-y-2.5 border-l-3 sm:border-l-4 border-brand-500 pl-3.5 sm:pl-6">
-                    <h3 class="font-serif text-base sm:text-xl font-bold text-slate-900">Mamografía: La llave de la detección rápida</h3>
+                <div class="space-y-3 border-l-4 border-brand-500 pl-5">
+                    <h3 class="font-serif text-lg sm:text-xl font-bold text-slate-900">Mamografía: La llave de la detección rápida</h3>
                     <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
                         Es el único método validado que reduce la mortalidad porque detecta microcalcificaciones y nódulos invisibles e impalpables.
                     </p>
-                    <ul class="text-xs text-slate-600 space-y-1.5 pt-1">
+                    <ul class="text-xs text-slate-600 space-y-2 pt-1">
                         <li class="flex items-start gap-2">
                             <span class="text-brand-500 font-bold">•</span>
                             <span><strong>A partir de los 40 años:</strong> Una mamografía anual (o bienal según guía clínica).</span>
@@ -148,12 +197,12 @@
                 </div>
 
                 <!-- Tríada Cervical -->
-                <div class="space-y-2.5 border-l-3 sm:border-l-4 border-brand-500 pl-3.5 sm:pl-6">
-                    <h3 class="font-serif text-base sm:text-xl font-bold text-slate-900">Tríada contra el Cáncer de Cuello Uterino</h3>
+                <div class="space-y-3 border-l-4 border-brand-500 pl-5">
+                    <h3 class="font-serif text-lg sm:text-xl font-bold text-slate-900">Tríada contra el Cáncer de Cuello Uterino</h3>
                     <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
                         Gracias a la combinación de tres herramientas, es una enfermedad altamente prevenible:
                     </p>
-                    <ul class="text-xs text-slate-600 space-y-1.5 pt-1">
+                    <ul class="text-xs text-slate-600 space-y-2 pt-1">
                         <li class="flex items-start gap-2">
                             <span class="text-brand-500 font-bold">1.</span>
                             <span><strong>Vacunación contra el VPH:</strong> En la infancia/adolescencia (9 a 14 años) o según criterio médico.</span>
@@ -169,21 +218,18 @@
                     </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- SECCIÓN 4: Autoexploración Consciente -->
-    <section id="autoexamen" class="px-2 sm:px-6 py-8 sm:py-12">
-        <div class="max-w-4xl mx-auto space-y-6 sm:space-y-8">
+        <!-- PÁGINA 4: Autoexploración Consciente -->
+        <section id="autoexamen" class="scroll-mt-24 space-y-8">
             <div class="text-center space-y-1">
-                <span class="text-brand-600 text-xl sm:text-2xl">🩺</span>
-                <h2 class="font-serif text-xl sm:text-3xl md:text-4xl font-bold text-slate-900">Autoexploración Consciente</h2>
-                <p class="text-slate-600 text-xs sm:text-sm md:text-base">Conocer tus mamas no reemplaza la mamografía, pero te conecta con tu cuerpo.</p>
+                <span class="text-brand-600 text-2xl">🩺</span>
+                <h2 class="font-serif text-2xl sm:text-4xl font-bold text-slate-900">Autoexploración Consciente</h2>
+                <p class="text-slate-600 text-sm sm:text-base">Conocer tus mamas no reemplaza la mamografía, pero te conecta con tu cuerpo.</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-                <!-- Video de YouTube -->
-                <div class="relative w-full aspect-video rounded-xl sm:rounded-2xl overflow-hidden shadow-md border border-slate-100">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-md border border-slate-100">
                     <iframe 
                         class="w-full h-full"
                         src="https://www.youtube.com/embed/TDgM_SIkIxc" 
@@ -194,12 +240,11 @@
                     </iframe>
                 </div>
 
-                <!-- Señales de alerta -->
-                <div class="bg-white p-4 sm:p-6 rounded-2xl border border-brand-100 space-y-2.5 shadow-sm">
-                    <div class="text-[11px] text-brand-600 font-semibold uppercase">¿Cuándo realizarlo?</div>
+                <div class="bg-white p-6 rounded-2xl border border-brand-100 space-y-3 shadow-sm">
+                    <div class="text-xs text-brand-600 font-semibold uppercase">¿Cuándo realizarlo?</div>
                     <p class="text-xs text-slate-600">De <strong>7 a 10 días después</strong> del inicio del período menstrual.</p>
                     <h3 class="font-serif font-bold text-slate-900 text-sm sm:text-base">Señales para consultar sin alarma:</h3>
-                    <ul class="text-xs text-slate-700 space-y-1.5">
+                    <ul class="text-xs text-slate-700 space-y-2">
                         <li class="flex items-center gap-2"><span class="text-brand-500">🔎</span> Nódulos duros no habituales.</li>
                         <li class="flex items-center gap-2"><span class="text-brand-500">🔎</span> Retracción reciente del pezón.</li>
                         <li class="flex items-center gap-2"><span class="text-brand-500">🔎</span> Asimetrías marcadas de reciente aparición.</li>
@@ -208,18 +253,16 @@
                     </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- SECCIÓN 5: Tabla / Tarjetas de Controles Preventivos -->
-    <section id="controles" class="px-3 sm:px-6 py-8 sm:py-12 bg-white rounded-2xl sm:rounded-3xl">
-        <div class="max-w-5xl mx-auto space-y-6 sm:space-y-8">
+        <!-- PÁGINA 5: Esquema de Chequeo Anual -->
+        <section id="controles" class="scroll-mt-24 bg-white p-6 sm:p-10 rounded-3xl border border-brand-100 shadow-sm space-y-8">
             <div class="text-center space-y-1">
-                <h2 class="font-serif text-xl sm:text-3xl md:text-4xl font-bold text-slate-900">Tu Hoja de Ruta de Chequeo Anual</h2>
-                <p class="text-slate-600 text-xs sm:text-sm md:text-base">Resumen claro de estudios preventivos recomendados.</p>
+                <h2 class="font-serif text-2xl sm:text-4xl font-bold text-slate-900">Tu Hoja de Ruta de Chequeo Anual</h2>
+                <p class="text-slate-600 text-sm sm:text-base">Resumen claro de estudios preventivos recomendados.</p>
             </div>
             
-            <!-- VISTA EN TABLA (Solo Pantallas Medianas y Grandes) -->
+            <!-- Vista Tabla (Computadoras) -->
             <div class="hidden sm:block overflow-x-auto bg-white rounded-2xl border border-brand-100 shadow-sm">
                 <table class="w-full text-left text-sm text-slate-600">
                     <thead class="bg-brand-100/50 text-brand-900 font-serif text-xs uppercase tracking-wider">
@@ -258,61 +301,58 @@
                         <tr class="hover:bg-brand-50/50 transition">
                             <td class="p-4 font-bold text-slate-800">Análisis de Sangre Completo</td>
                             <td class="p-4">Anual</td>
-                            <td class="p-4">Perfil lipídico, glucemia, hemograma (descartar anemia) y función tiroidea.</td>
+                            <td class="p-4">Perfil lipídico, glucemia, hemograma y función tiroidea.</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <!-- VISTA EN TARJETAS (Especial para Celulares) -->
+            <!-- Vista Tarjetas (Celulares) -->
             <div class="block sm:hidden space-y-3">
                 <div class="bg-brand-50/60 p-4 rounded-xl border border-brand-100 space-y-1">
                     <div class="font-bold text-slate-900 text-sm">Consulta Ginecológica</div>
-                    <div class="text-[11px] text-brand-700 font-semibold">🗓️ Desde inicio de relaciones o 18-20 años</div>
+                    <div class="text-xs text-brand-700 font-semibold">🗓️ Desde inicio de relaciones o 18-20 años</div>
                     <p class="text-xs text-slate-600 pt-1">Examen físico, valoración mamaria, consejería anticonceptiva y salud sexual.</p>
                 </div>
                 <div class="bg-brand-50/60 p-4 rounded-xl border border-brand-100 space-y-1">
                     <div class="font-bold text-slate-900 text-sm">Papanicolaou / Test VPH</div>
-                    <div class="text-[11px] text-brand-700 font-semibold">🗓️ De 21 a 65 años</div>
+                    <div class="text-xs text-brand-700 font-semibold">🗓️ De 21 a 65 años</div>
                     <p class="text-xs text-slate-600 pt-1">Lesiones precancerosas producidas por el VPH en el cuello uterino.</p>
                 </div>
                 <div class="bg-brand-50/60 p-4 rounded-xl border border-brand-100 space-y-1">
                     <div class="font-bold text-slate-900 text-sm">Mamografía</div>
-                    <div class="text-[11px] text-brand-700 font-semibold">🗓️ Anual desde los 40 años</div>
+                    <div class="text-xs text-brand-700 font-semibold">🗓️ Anual desde los 40 años</div>
                     <p class="text-xs text-slate-600 pt-1">Lesiones tempranas, microcalcificaciones y tumores no palpables.</p>
                 </div>
                 <div class="bg-brand-50/60 p-4 rounded-xl border border-brand-100 space-y-1">
                     <div class="font-bold text-slate-900 text-sm">Ecografía Mamaria</div>
-                    <div class="text-[11px] text-brand-700 font-semibold">🗓️ Complemento de mamografía</div>
+                    <div class="text-xs text-brand-700 font-semibold">🗓️ Complemento de mamografía</div>
                     <p class="text-xs text-slate-600 pt-1">Diferenciar quistes líquidos de nódulos sólidos, especialmente en mamas densas.</p>
                 </div>
                 <div class="bg-brand-50/60 p-4 rounded-xl border border-brand-100 space-y-1">
                     <div class="font-bold text-slate-900 text-sm">Ecografía Ginecológica / TV</div>
-                    <div class="text-[11px] text-brand-700 font-semibold">🗓️ Según criterio clínico</div>
+                    <div class="text-xs text-brand-700 font-semibold">🗓️ Según criterio clínico</div>
                     <p class="text-xs text-slate-600 pt-1">Estado del miometrio (miomas), endometrio (pólipos) y ovarios (quistes).</p>
                 </div>
                 <div class="bg-brand-50/60 p-4 rounded-xl border border-brand-100 space-y-1">
                     <div class="font-bold text-slate-900 text-sm">Análisis de Sangre Completo</div>
-                    <div class="text-[11px] text-brand-700 font-semibold">🗓️ Anual</div>
+                    <div class="text-xs text-brand-700 font-semibold">🗓️ Anual</div>
                     <p class="text-xs text-slate-600 pt-1">Perfil lipídico, glucemia, hemograma y función tiroidea.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- SECCIÓN 6: Salud Cardiovascular en la Mujer -->
-    <section id="cardio" class="px-2 sm:px-6 py-8 sm:py-12">
-        <div class="max-w-5xl mx-auto space-y-6 sm:space-y-8">
+        <!-- PÁGINA 6: Salud Cardiovascular en la Mujer -->
+        <section id="cardio" class="scroll-mt-24 space-y-8">
             <div class="text-center space-y-1">
-                <span class="text-brand-600 text-xl sm:text-2xl">❤️</span>
-                <h2 class="font-serif text-xl sm:text-3xl md:text-4xl font-bold text-slate-900">Salud Cardiovascular en la Mujer</h2>
-                <p class="text-slate-600 text-xs sm:text-sm md:text-base">El riesgo vascular tras la menopausia.</p>
+                <span class="text-brand-600 text-2xl">❤️</span>
+                <h2 class="font-serif text-2xl sm:text-4xl font-bold text-slate-900">Salud Cardiovascular en la Mujer</h2>
+                <p class="text-slate-600 text-sm sm:text-base">El riesgo vascular tras la menopausia.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                <!-- Síntomas Atípicos -->
-                <div class="p-5 sm:p-6 rounded-2xl bg-rose-50 border border-rose-100 space-y-2.5">
-                    <h3 class="font-bold text-brand-900 text-sm sm:text-lg">⚠️ Síntomas Atípicos de Infarto en Mujeres</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-6 rounded-2xl bg-rose-50 border border-rose-100 space-y-3">
+                    <h3 class="font-bold text-brand-900 text-base sm:text-lg">⚠️ Síntomas Atípicos de Infarto en Mujeres</h3>
                     <p class="text-xs text-slate-600 leading-relaxed">
                         A diferencia del típico dolor opresivo en el pecho, las mujeres suelen presentar:
                     </p>
@@ -324,9 +364,8 @@
                     </ul>
                 </div>
 
-                <!-- Protegiendo el Corazón -->
-                <div class="p-5 sm:p-6 rounded-2xl bg-brand-50 border border-brand-100 space-y-2.5">
-                    <h3 class="font-bold text-brand-900 text-sm sm:text-lg">🛡️ Medidas Preventivas</h3>
+                <div class="p-6 rounded-2xl bg-brand-50 border border-brand-100 space-y-3">
+                    <h3 class="font-bold text-brand-900 text-base sm:text-lg">🛡️ Medidas Preventivas</h3>
                     <p class="text-xs text-slate-600 leading-relaxed">
                         El estrógeno ejerce un efecto protector. Al descender en la menopausia, debemos reforzar los cuidados:
                     </p>
@@ -337,94 +376,88 @@
                     </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- SECCIÓN 7: Perimenopausia y Menopausia -->
-    <section id="menopausia" class="px-3 sm:px-6 py-8 sm:py-12 bg-white rounded-2xl sm:rounded-3xl">
-        <div class="max-w-5xl mx-auto space-y-6 sm:space-y-8">
+        <!-- PÁGINA 7: Perimenopausia y Menopausia -->
+        <section id="menopausia" class="scroll-mt-24 bg-white p-6 sm:p-10 rounded-3xl border border-brand-100 shadow-sm space-y-8">
             <div class="text-center space-y-1">
-                <span class="text-brand-600 text-xl sm:text-2xl">✨</span>
-                <h2 class="font-serif text-xl sm:text-3xl md:text-4xl font-bold text-slate-900">Perimenopausia y Menopausia</h2>
-                <p class="text-slate-600 text-xs sm:text-sm md:text-base">Diferenciación clínica y consejos médicos para la transición.</p>
+                <span class="text-brand-600 text-2xl">✨</span>
+                <h2 class="font-serif text-2xl sm:text-4xl font-bold text-slate-900">Perimenopausia y Menopausia</h2>
+                <p class="text-slate-600 text-sm sm:text-base">Diferenciación clínica y consejos médicos para la transición.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
-                <div class="bg-brand-50/50 p-4 sm:p-5 rounded-2xl border border-brand-100">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-brand-50/50 p-5 rounded-2xl border border-brand-100">
                     <h4 class="font-bold text-brand-700 mb-1 text-sm sm:text-base">Perimenopausia</h4>
                     <p class="text-xs text-slate-600 leading-relaxed">Etapa de transición (2 a 8 años) con ciclos irregulares, sofocos, insomnio y cambios de humor.</p>
                 </div>
-                <div class="bg-brand-50/50 p-4 sm:p-5 rounded-2xl border border-brand-100">
+                <div class="bg-brand-50/50 p-5 rounded-2xl border border-brand-100">
                     <h4 class="font-bold text-brand-700 mb-1 text-sm sm:text-base">Menopausia</h4>
                     <p class="text-xs text-slate-600 leading-relaxed">Momento puntual diagnosticado tras 12 meses consecutivos de ausencia de regla.</p>
                 </div>
-                <div class="bg-brand-50/50 p-4 sm:p-5 rounded-2xl border border-brand-100">
+                <div class="bg-brand-50/50 p-5 rounded-2xl border border-brand-100">
                     <h4 class="font-bold text-brand-700 mb-1 text-sm sm:text-base">Posmenopausia</h4>
                     <p class="text-xs text-slate-600 leading-relaxed">Fase posterior donde se vigila la densidad ósea y el perfil metabólico.</p>
                 </div>
             </div>
 
-            <div class="bg-brand-50/30 p-4 sm:p-6 rounded-2xl border border-brand-100 space-y-2.5">
+            <div class="bg-brand-50/30 p-6 rounded-2xl border border-brand-100 space-y-3">
                 <h3 class="font-serif font-bold text-slate-900 text-sm sm:text-base">Consejos Médicos para la Transición:</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs text-slate-600">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-slate-600">
                     <div>
                         <p>• <strong>Densitometría Ósea:</strong> Para detectar osteopenia u osteoporosis. Aporte de Calcio y Vitamina D.</p>
-                        <p class="mt-1.5">• <strong>Ejercicio de Fuerza:</strong> Indispensable para frenar la pérdida de masa ósea y muscular.</p>
+                        <p class="mt-2">• <strong>Ejercicio de Fuerza:</strong> Indispensable para frenar la pérdida de masa ósea y muscular.</p>
                     </div>
                     <div>
                         <p>• <strong>Salud Urogenital:</strong> Ante sequedad o molestias, consultar por hidratantes o estrógenos tópicos.</p>
-                        <p class="mt-1.5">• <strong>Terapia de Reemplazo Hormonal (TRH):</strong> Opción eficaz según evaluación médica individual.</p>
+                        <p class="mt-2">• <strong>Terapia de Reemplazo Hormonal (TRH):</strong> Opción eficaz según evaluación médica individual.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- SECCIÓN 8: Bienestar y Salud Mental -->
-    <section id="bienestar" class="px-2 sm:px-6 py-8 sm:py-12">
-        <div class="max-w-4xl mx-auto space-y-6 sm:space-y-8">
+        <!-- PÁGINA 8: Bienestar y Salud Mental -->
+        <section id="bienestar" class="scroll-mt-24 space-y-8">
             <div class="text-center space-y-1">
-                <span class="text-brand-600 text-xl sm:text-2xl">🧠</span>
-                <h2 class="font-serif text-xl sm:text-3xl md:text-4xl font-bold text-slate-900">Bienestar y Salud Mental</h2>
-                <p class="text-slate-600 text-xs sm:text-sm md:text-base">Abordaje integral del bienestar emocional.</p>
+                <span class="text-brand-600 text-2xl">🧠</span>
+                <h2 class="font-serif text-2xl sm:text-4xl font-bold text-slate-900">Bienestar y Salud Mental</h2>
+                <p class="text-slate-600 text-sm sm:text-base">Abordaje integral del bienestar emocional.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-                <div class="p-5 bg-white rounded-2xl border border-brand-100 space-y-1.5 shadow-sm">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 bg-white rounded-2xl border border-brand-100 space-y-2 shadow-sm">
                     <h3 class="font-bold text-brand-900 text-sm sm:text-base">🌙 Higiene del Sueño</h3>
                     <p class="text-xs text-slate-600 leading-relaxed">Horarios fijos, evitar pantallas 1 hora antes de dormir y mantener la habitación fresca.</p>
                 </div>
-                <div class="p-5 bg-white rounded-2xl border border-brand-100 space-y-1.5 shadow-sm">
+                <div class="p-6 bg-white rounded-2xl border border-brand-100 space-y-2 shadow-sm">
                     <h3 class="font-bold text-brand-900 text-sm sm:text-base">🧘 Ansiedad y Estrés</h3>
                     <p class="text-xs text-slate-600 leading-relaxed">Respiración consciente, meditación o actividad física periódica.</p>
                 </div>
-                <div class="p-5 bg-white rounded-2xl border border-brand-100 space-y-1.5 shadow-sm">
+                <div class="p-6 bg-white rounded-2xl border border-brand-100 space-y-2 shadow-sm">
                     <h3 class="font-bold text-brand-900 text-sm sm:text-base">💬 Atención a la Depresión</h3>
                     <p class="text-xs text-slate-600 leading-relaxed">No normalizar la apatía o tristeza persistente. La consulta profesional es clave.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- SECCIÓN 9: El Circuito de la Mujer -->
-    <section id="circuito" class="px-3 sm:px-6 py-8 sm:py-12 bg-white rounded-2xl sm:rounded-3xl">
-        <div class="max-w-5xl mx-auto space-y-6 sm:space-y-8">
-            <div class="text-center space-y-1">
-                <span class="inline-block px-3 py-1 bg-brand-200 text-brand-900 text-[11px] sm:text-xs font-bold rounded-full uppercase tracking-wider">Programa de Atención Coordinada</span>
-                <h2 class="font-serif text-xl sm:text-3xl md:text-4xl font-bold text-slate-900">El Circuito de la Mujer</h2>
+        <!-- PÁGINA 9: El Circuito de la Mujer -->
+        <section id="circuito" class="scroll-mt-24 bg-white p-6 sm:p-10 rounded-3xl border border-brand-100 shadow-sm space-y-8">
+            <div class="text-center space-y-2">
+                <span class="inline-block px-3 py-1 bg-brand-200 text-brand-900 text-xs font-bold rounded-full uppercase tracking-wider">Programa de Atención Coordinada</span>
+                <h2 class="font-serif text-2xl sm:text-4xl font-bold text-slate-900">El Circuito de la Mujer</h2>
                 <p class="text-slate-600 max-w-2xl mx-auto text-xs sm:text-sm md:text-base">
                     Programa de atención médica coordinada para realizar todos los controles ginecológicos preventivos de rutina en un mismo día y lugar.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- En qué consiste -->
-                <div class="bg-brand-50/50 p-5 sm:p-6 rounded-2xl border border-brand-100 space-y-2.5">
-                    <h3 class="font-serif font-bold text-brand-900 text-base sm:text-xl flex items-center gap-2">
+                <div class="bg-brand-50/50 p-6 rounded-2xl border border-brand-100 space-y-3">
+                    <h3 class="font-serif font-bold text-brand-900 text-lg sm:text-xl flex items-center gap-2">
                         <span>🩺</span> ¿En qué consiste?
                     </h3>
                     <p class="text-xs text-slate-600">Recorrido organizado para optimizar tiempo y facilitar la prevención. Incluye:</p>
-                    <ul class="text-xs text-slate-700 space-y-1.5 pt-1">
+                    <ul class="text-xs text-slate-700 space-y-2 pt-1">
                         <li class="flex items-start gap-2">
                             <span class="text-brand-500 font-bold">•</span>
                             <span><strong>Consulta ginecológica:</strong> Examen físico inicial.</span>
@@ -445,11 +478,11 @@
                 </div>
 
                 <!-- Objetivos -->
-                <div class="bg-brand-50/50 p-5 sm:p-6 rounded-2xl border border-brand-100 space-y-2.5">
-                    <h3 class="font-serif font-bold text-brand-900 text-base sm:text-xl flex items-center gap-2">
+                <div class="bg-brand-50/50 p-6 rounded-2xl border border-brand-100 space-y-3">
+                    <h3 class="font-serif font-bold text-brand-900 text-lg sm:text-xl flex items-center gap-2">
                         <span>🎯</span> ¿Cuál es su objetivo?
                     </h3>
-                    <ul class="text-xs text-slate-700 space-y-2.5 pt-1">
+                    <ul class="text-xs text-slate-700 space-y-3 pt-1">
                         <li class="flex items-start gap-2">
                             <span class="bg-brand-100 text-brand-700 p-1 rounded-md text-xs font-bold">1</span>
                             <span><strong>Detección temprana:</strong> Identificar patologías antes de presentar síntomas.</span>
@@ -467,34 +500,34 @@
             </div>
 
             <!-- Lugares en Córdoba con DASPU -->
-            <div class="bg-brand-50/30 p-4 sm:p-6 rounded-2xl border border-brand-100 space-y-3">
-                <h3 class="font-serif font-bold text-slate-900 text-sm sm:text-lg flex items-center gap-2">
+            <div class="bg-brand-50/30 p-6 rounded-2xl border border-brand-100 space-y-4">
+                <h3 class="font-serif font-bold text-slate-900 text-base sm:text-lg flex items-center gap-2">
                     <span>📍</span> Lugares en Córdoba donde podés realizarlo con DASPU:
                 </h3>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs text-slate-700">
-                    <div class="p-3.5 bg-white rounded-xl border border-brand-100 shadow-sm">
-                        <p class="font-bold text-brand-900 text-xs sm:text-sm mb-0.5">Clínica Universitaria Reina Fabiola</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs text-slate-700">
+                    <div class="p-4 bg-white rounded-xl border border-brand-100 shadow-sm">
+                        <p class="font-bold text-brand-900 text-sm mb-1">Clínica Universitaria Reina Fabiola</p>
                         <p class="text-slate-600">📞 Turnos: <strong>(0351) 4142121</strong></p>
                     </div>
-                    <div class="p-3.5 bg-white rounded-xl border border-brand-100 shadow-sm">
-                        <p class="font-bold text-brand-900 text-xs sm:text-sm mb-0.5">Dominis</p>
+                    <div class="p-4 bg-white rounded-xl border border-brand-100 shadow-sm">
+                        <p class="font-bold text-brand-900 text-sm mb-1">Dominis</p>
                         <p class="text-slate-600">📱 Sede N. Cba: <strong>3517468671</strong></p>
                         <p class="text-slate-600">📱 Sede Cerro: <strong>3512018670</strong></p>
                     </div>
-                    <div class="p-3.5 bg-white rounded-xl border border-brand-100 shadow-sm">
-                        <p class="font-bold text-brand-900 text-xs sm:text-sm mb-0.5">OULTON</p>
+                    <div class="p-4 bg-white rounded-xl border border-brand-100 shadow-sm">
+                        <p class="font-bold text-brand-900 text-sm mb-1">OULTON</p>
                         <p class="text-slate-600">📞 Turnos: <strong>351426 7797</strong></p>
                     </div>
-                    <div class="p-3.5 bg-white rounded-xl border border-brand-100 shadow-sm">
-                        <p class="font-bold text-brand-900 text-xs sm:text-sm mb-0.5">Marchegiani</p>
+                    <div class="p-4 bg-white rounded-xl border border-brand-100 shadow-sm">
+                        <p class="font-bold text-brand-900 text-sm mb-1">Marchegiani</p>
                         <p class="text-slate-600">📱 Turnos: <strong>3512007032</strong></p>
                     </div>
                 </div>
 
                 <!-- Enlace DASPU -->
                 <div class="pt-2 text-center">
-                    <a href="https://www.daspu.com.ar/afiliados/salud/programas-de-prevencion-y-promocion-en-salud-integral" target="_blank" class="inline-block bg-brand-600 hover:bg-brand-700 text-white font-semibold text-xs px-5 py-2.5 rounded-full transition shadow-sm leading-snug">
+                    <a href="https://www.daspu.com.ar/afiliados/salud/programas-de-prevencion-y-promocion-en-salud-integral" target="_blank" class="inline-block bg-brand-600 hover:bg-brand-700 text-white font-semibold text-xs px-6 py-3 rounded-full transition shadow-sm">
                         🌐 Programas de Prevención y Promoción en Salud Integral DASPU ↗
                     </a>
                 </div>
@@ -502,26 +535,39 @@
         </div>
     </section>
 
-    <!-- SECCIÓN 10: Cierre -->
-    <section id="contacto" class="px-4 sm:px-6 py-8 sm:py-12 bg-brand-900 text-white rounded-2xl sm:rounded-3xl my-4">
-        <div class="max-w-3xl mx-auto text-center space-y-4 sm:space-y-6">
-            <div class="flex justify-center">
-                <img src="https://lh3.googleusercontent.com/d/1GhguUo2AhxF6aZCmQIUbEb0pJ2fySrjT" alt="Laboratorio Hemoderivados UNC" class="h-12 sm:h-16 w-auto object-contain brightness-0 invert" />
-            </div>
-            <h2 class="font-serif text-xl sm:text-3xl md:text-4xl font-bold">Cuidarte es un acto de amor propio.</h2>
-            <p class="text-brand-200 text-xs sm:text-sm md:text-base leading-relaxed">
-                Compartí esta guía preventiva. La información médica oportuna salva vidas.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-3 pt-2">
-                <a href="https://www.daspu.com.ar/afiliados/salud/programas-de-prevencion-y-promocion-en-salud-integral" target="_blank" class="w-full sm:w-auto text-center bg-brand-500 hover:bg-brand-600 text-white font-semibold px-5 py-2.5 rounded-full transition shadow-md text-xs sm:text-sm">
-                    Programas DASPU ↗
-                </a>
-                <a href="https://youtu.be/TDgM_SIkIxc" target="_blank" class="w-full sm:w-auto text-center bg-white/10 hover:bg-white/20 text-white font-semibold px-5 py-2.5 rounded-full transition text-xs sm:text-sm">
-                    Ver video de Autoexamen ↗
-                </a>
-            </div>
+    </main>
+
+    <!-- PÁGINA 10: Cierre y Pie de página -->
+    <footer id="contacto" class="bg-brand-900 text-white text-center py-12 px-4 space-y-6">
+        <div class="flex justify-center mb-2">
+            <img src="https://lh3.googleusercontent.com/d/1GhguUo2AhxF6aZCmQIUbEb0pJ2fySrjT" alt="Laboratorio Hemoderivados UNC" class="h-16 w-auto object-contain brightness-0 invert" />
         </div>
-    </section>
+        <h2 class="font-serif text-2xl sm:text-4xl font-bold">Cuidarte es un acto de amor propio.</h2>
+        <p class="text-brand-200 text-xs sm:text-base max-w-xl mx-auto leading-relaxed">
+            Compartí esta guía preventiva. La información médica oportuna salva vidas.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-3 pt-2">
+            <a href="https://www.daspu.com.ar/afiliados/salud/programas-de-prevencion-y-promocion-en-salud-integral" target="_blank" class="w-full sm:w-auto bg-brand-500 hover:bg-brand-600 text-white font-semibold px-6 py-3 rounded-full transition shadow-md text-xs sm:text-sm">
+                Programas DASPU ↗
+            </a>
+            <a href="https://youtu.be/TDgM_SIkIxc" target="_blank" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-full transition text-xs sm:text-sm">
+                Ver video de Autoexamen ↗
+            </a>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT PARA EL MENÚ MÓVIL -->
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.add('hidden');
+        }
+    </script>
 
 </body>
 </html>
